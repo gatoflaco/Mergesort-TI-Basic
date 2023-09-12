@@ -1,0 +1,50 @@
+:If not(ₗFLAG(1)):Then
+:ClrHome
+:Disp "MERGE IS ONLY A","HELPER FUNCTION","FOR MERGESRT.","IT CAN'T BE USED","On ITS OWN."
+:Stop
+:End
+:
+:Disp "L:",seq(ₗARR(X),X,ₗL(N),ₗM(N)),"R:",seq(ₗARR(X),X,ₗM(N)+1,ₗR(N))
+:
+:SetUpEditor ₗTEMP
+:ₗR(N)-ₗL(N)+1→dim(ₗTEMP)
+:ₗL(N)→I
+:ₗM(N)+1→J
+:1→K
+:
+:While K≤dim(ₗTEMP)
+:
+:While I≤ₗM(N) and J≤ₗR(N)
+:If ₗARR(I)≤ₗARR(J):Then
+:ₗARR(I)→ₗTEMP(K)
+:I+1→I
+:Else
+:ₗARR(J)→ₗTEMP(K)
+:J+1→J
+:End
+:K+1→K
+:End
+:
+:While I≤ₗM(N)
+:ₗARR(I)→ₗTEMP(K)
+:I+1→I
+:K+1→K
+:End
+:
+:While J≤ₗR(N)
+:ₗARR(J)→ₗTEMP(K)
+:J+1→J
+:K+1→K
+:End
+:
+:End
+:
+:ₗL(N)→I
+:1→K
+:While K≤dim(ₗTEMP)
+:ₗTEMP(K)→ₗARR(I)
+:I+1→I
+:K+1→K
+:End
+:
+:DelVar ₗTEMP
