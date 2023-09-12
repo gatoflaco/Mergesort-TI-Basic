@@ -1,0 +1,57 @@
+:ClrHome
+:Disp "ENTER A LIST BY","COMMA-SEPARATED","NUMBERS BETWEEN","CURLY BRACES.","E.G. {6,2,1,7,4}"
+:
+:INPUT ₗARR
+:{1}→ₗL
+:{dim(ₗARR)}→ₗR
+:SetUpEditor ₗM
+:1→dim(ₗM)
+:{0}→ₗG
+:1→N
+:
+:Lbl A0
+:If ₗL(N)<ₗR(N):Then
+:ₗL(N)+int((ₗR(N)-ₗL(N))/2)→ₗM(N)
+:
+:N+1→N
+:N→dim(ₗL)
+:N→dim(ₗR)
+:N→dim(ₗM)
+:N→dim(ₗG)
+:ₗL(N-1)→ₗL(N)
+:ₗM(N-1)→ₗR(N)
+:1→ₗG(N)
+:Goto A0
+:Lbl A1
+:
+:ₗM(N-1)+1→ₗL(N)
+:ₗR(N-1)→ₗR(N)
+:2→ₗG(N)
+:Goto A0
+:Lbl A2
+:N-1→dim(ₗG)
+:N-1→dim(ₗM)
+:N-1→dim(ₗR)
+:N-1→dim(ₗL)
+:N-1→N
+:
+:1→ₗFLAG(1)
+:prgmMERGE
+:0→ₗFLAG(1)
+:End
+:
+:If ₗG(N)=1:Then:Goto A1
+:Else:If ₗG(N)=2:Then:Goto A2
+:End
+:
+:Disp "","SORTED LIST:",ₗARR
+:
+:DelVar ₗARR
+:DelVar ₗL
+:DelVar ₗR
+:DelVar ₗM
+:DelVar ₗG
+:DelVar N
+:DelVar I
+:DelVar J
+:DelVar K
