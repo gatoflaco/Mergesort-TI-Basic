@@ -15,6 +15,7 @@ You can find the dim command in 2nd→x⁻¹→MATH→3.
 ### The main program you execute is the MERGESRT program.
 Assuming you have put these programs in your physical/emulated calculator already, go like this:
 - PRGM→[MERGESRT]
+
 Since you may have other programs, MERGESRT is in brackets to represent that you should press what you have to to click it. You can use the arrow keys and ENTER if you have to.
 
 Once you execute the program, you will be given an introductory message followed by a prompt for your list.
